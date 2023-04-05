@@ -1,0 +1,8 @@
+<div class="">
+  <h4> <%= link_to post.title, user_post_path(post) %> </h4>
+  <p> <%= post.text %> </p>
+  <div class="d-flex justify-content-end">
+    <span class="">Comments: <%= post.comments.count%> </span>, 
+    <span class="ml-2" > Comments: <%= post.likes.count%> </span>
+  </div>
+</div>

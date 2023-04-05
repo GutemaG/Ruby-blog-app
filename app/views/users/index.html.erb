@@ -1,8 +1,5 @@
-<h1>Lise of users with number of their posts</h1>
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user_path(user) %>
-    </li>
+<div class="container p-2">
+  <%@users.each do |user| %>
+    <%= render "shared/user_header", user: user%>
   <% end %>
-</ul>
+</div>

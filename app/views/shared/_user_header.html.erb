@@ -1,0 +1,18 @@
+<div class="row p-2 w-50">
+  <div class="col-3 m-2 p-2 border d-flex align-items-center">
+    <h6><%= user.name %></h6>
+  </div>
+  <div class="col-8 border m-2">
+    <div class="d-flex flex-column">
+      <a href="" class="link-secondary link-underline-opacity-0">
+        <div class="username p-1">
+          <h5> <%= link_to user.name, user_path(user), class:'link-secondary' %> 
+            <h5>
+            </div>
+            <div class="d-flex justify-content-end">
+              Number of Posts: <%= user.posts.count%>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>

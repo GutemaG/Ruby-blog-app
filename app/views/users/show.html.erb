@@ -1,2 +1,15 @@
-<h1>User Detail</h1>
-<h2>Posts</h2>
+<div class="container p-2">
+  <div class="row flex flex-column">
+    <%= render "shared/user_header", user: @user%>
+    <div class="bio border p-3 w-50">
+      <h4>Bio</h4>
+      <p> <%= @user.bio%> </p>
+    </div>
+    <div class="w-50 border p-3 mt-1">
+      <% @user.posts.each do |post| %>
+        <%= render "shared/post_comment", post: post %>
+      <% end %>
+    </div>
+    <%= link_to "See All Post", user_posts_path(@user), class:"btn btn-secondary w-50 mt-2" %>
+  </div>
+</div>
