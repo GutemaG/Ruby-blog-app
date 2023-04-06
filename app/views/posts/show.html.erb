@@ -1,6 +1,6 @@
-<div class="container">
-  <%= link_to "home", user_path() %>
-  <div class="d-flex flex-column w-50 border p-2">
+<div class="mx-auto " >
+  <%= link_to "home", root_path() %>
+  <div class="d-flex flex-column border border-dark rounded border-2 p-2 mt-2">
     <h3><%= @post.title %> by <%= @post.author.name%> </h3>
     <div class="d-flex justify-content-end">
       <span class="">Comments: <%= @post.comments.count%> </span>, 
@@ -8,7 +8,7 @@
     </div>
     <p> <%= @post.text %> </p>
   </div>
-  <div class="border mt-2 w-50">
+  <div class="border border-dark rounded mt-2 p-3">
     <h5>Comments</h5>
     <div class="border mt-1 p-2">
       <% @post.comments.each do |comment| %>
