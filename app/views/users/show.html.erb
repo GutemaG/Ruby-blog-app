@@ -1,2 +1,21 @@
-<h1>User Detail</h1>
-<h2>Posts</h2>
+<div class="">
+  <div class="row">
+    <div class="col-12">
+      <%= render "shared/user_header", user: @user%>
+    </div>
+    <div class="col-12">
+      <div class="bio rounded border border-dark p-2">
+        <h4>Bio</h4>
+        <p> <%= @user.bio%> </p>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="border p-3 mt-1">
+        <% @user.recent_three_posts.each do |post| %>
+          <%= render "shared/post_comment", post: post %>
+        <% end %>
+      </div>
+    </div>
+    <%= link_to "See All Post", user_posts_path(@user), class:"btn btn-secondary w-50 mt-2 mx-auto" %>
+  </div>
+</div>

@@ -1,1 +1,22 @@
-<h1>Users Post</h1>
+<div class="mx-auto w-75">
+  <%= render "shared/user_header", user: @user%>
+  <% @posts.each do |post| %>
+    <div class="w-75 border border-dark rounded border-2 p-2">
+      <h4> <%= link_to post.title, user_post_path(post, user_id: @user.id) %> </h4>
+      <p> <%= post.text %> </p>
+      <div class="d-flex justify-content-end">
+        <span class="">Comments: <%= post.comments.count%> </span>, 
+        <span class="ml-2" > Comments: <%= post.likes.count%> </span>
+      </div>
+      <div class="border mt-1 p-2">
+        <% post.recent_five_comments.each do |comment| %>
+          <p>
+            <span> <%= comment.author.name %> : </span>
+            <span> <%= comment.text %> </span>
+          </p>
+        <%end%>
+      </div>
+    </div>
+  <% end %>
+  <button class="btn btn-secondary btn-sm mt-5">Pagination comming soon</button>
+</div>

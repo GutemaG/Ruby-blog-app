@@ -1,0 +1,15 @@
+<div class="row m-1">
+  <div class="col my-1 border rounded bourder-2 border-dark">
+    <img src="<%=user.photo %>" alt="<%= user.name %>" class="d-flex justify-content-center">
+  </div>
+  <div class="col-10  m-1 p-3 border rounded bourder-2 border-dark">
+    <div class="d-flex flex-column">
+      <h5>
+        <%= link_to user.name, user_path(user), class:'link-secondary' %>
+      </h5>
+    </div>
+    <div class="d-flex justify-content-end">
+      Number of Posts: <%= user.posts.count%>
+    </div>
+  </div>
+</div>
