@@ -1,0 +1,11 @@
+<h1>New Comment</h1>
+<%= form_with model: @comment, url: user_post_comments_path do |form| %>
+  <div class="d-flex flex-column border border-dark rounded border-2 p-2 mt-2">
+    <div class="my-5 d-flex flex-column">
+      <%= form.label :comment%>
+      <%= form.text_area :text, required: true, class: "w-100" %>
+    </div>
+    <%= form.submit class:"w-50 d-flex mx-auto" %>
+  </div>
+</div>
+<% end %>
