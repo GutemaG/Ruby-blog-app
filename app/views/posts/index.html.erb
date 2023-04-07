@@ -12,8 +12,11 @@
       <h4> <%= link_to post.title, user_post_path(post, user_id: @user.id) %> </h4>
       <p> <%= post.text %> </p>
       <div class="d-flex justify-content-end">
-        <span class="">Comments: <%= post.comments.count%> </span>, 
-        <span class="ml-2" > Comments: <%= post.likes.count%> </span>
+        <span class="m-2">Comments: <%= post.comments.count%> </span>
+        <span class="m-2">Likes: <%= post.likes.count%> </span>
+        <%= form_with model: Like.new, url: user_post_likes_path(@user, post) do |form| %>
+          <% form.submit :Like, class: "btn btn-danger btn-sm"%>
+        <% end %>
       </div>
       <div class="border mt-1 p-2">
         <% post.recent_five_comments.each do |comment| %>

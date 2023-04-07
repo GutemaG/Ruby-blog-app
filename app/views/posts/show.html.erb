@@ -8,6 +8,9 @@
     </div>
     <p> <%= @post.text %> </p>
   </div>
+  <%= link_to new_user_post_comment_path(@user, @post) do %>
+    <button class="btn btn-secondary m-2 p-2" >New Comment</button>
+  <% end %>
   <div class="border border-dark rounded mt-2 p-3">
     <h5>Comments</h5>
     <div class="border mt-1 p-2">
