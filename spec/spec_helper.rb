@@ -91,4 +91,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   # Kernel.srand config.seed
   # end
+  require 'database_cleaner'
+  config.before(:each) { DatabaseCleaner.strategy = :transaction }
+  config.before(:each) { DatabaseCleaner.start }
+  config.append_after(:each) { DatabaseCleaner.clean }
 end
