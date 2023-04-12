@@ -4,7 +4,7 @@
   <img src="./blog.jpeg" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>ROR Blog APP</b></h3>
 
 </div>
 
@@ -17,14 +17,12 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -32,10 +30,8 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
 
 # 📖 Ruby Blog App <a name="about-project"></a>
-
 
 **Ruby Blog app** is a simple blog application that is built using Ruby on rails frameworkd
 
@@ -75,16 +71,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Coming soon](#)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -111,10 +97,14 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
-
 ```sh
   cd Ruby-blog-app
   bundle install
+```
+Create and migrate database
+```sh
+ rails db:create
+ rails db:migrate
 ```
 
 ### Usage
@@ -129,13 +119,8 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  coming soon
+  rspec spec
  ```
-
-### Deployment
-
-You can deploy this project using:
-coming soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,6 +134,11 @@ coming soon
 - Twitter: [@birhanugudisa3](https://twitter.com/birhanugudisa3)
 - LinkedIn: [birhanugudisa](https://linkedin.com/in/birhanugudisa)
 
+👤 **Gustavo MarcoAurelioAntonio**
+
+- GitHub: [@MarcoAurelioAntonio](https://github.com/MarcoAurelioAntonio)
+- Twitter: [@gustavoporcilio](https://twitter.com/gustavoporcilio)
+- LinkedIn: [gustavo-ariel-porcilio](https://www.linkedin.com/in/gustavo-ariel-porcilio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,3 +185,4 @@ I would like to thank microverse community
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
