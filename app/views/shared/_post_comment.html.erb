@@ -1,5 +1,8 @@
 <div class="">
-  <h4> <%= link_to post.title, user_post_path(user,post) %> </h4>
+  <div class="d-flex justify-content-between">
+    <h4> <%= link_to post.title, user_post_path(user,post) %> </h4>
+    <button class="btn btn-danger btn-sm ">Delete</button>
+  </div>
   <p> <%= post.text %> </p>
   <div class="d-flex justify-content-end">
     <span class="">Comments: <%= post.comments.count%> </span>, 
