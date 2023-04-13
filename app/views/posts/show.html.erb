@@ -20,7 +20,11 @@
             <span class="fw-bold mr-2"> <%= comment.author.name %> : </span>
             <span class="fw-italic"> <%= comment.text %> </span>
           </p>
-          <button class="btn btn-danger btn-sm ">Delete</button>
+          <% if can? :destroy, comment%>
+            <%=link_to "Delete", user_post_comment_path(@user, @post, comment),
+            data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+            class: 'btn btn-danger btn-sm' %>
+          <%end%>
         </div>
         <hr>
       <%end%>
