@@ -11,7 +11,11 @@
     <div class="m-1 border border-dark rounded border-2 p-2">
       <div class="d-flex justify-content-between">
         <h4> <%= link_to post.title, user_post_path(post, user_id: @user.id) %> </h4>
-        <button class="btn btn-danger btn-sm ">Delete</button>
+        <% if can? :destroy, post%>
+          <%=link_to "Delete", user_post_path(@user, post),
+            data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+            class: 'btn btn-danger btn-sm' %>
+        <%end%>
       </div>
       <p> <%= post.text %> </p>
       <div class="d-flex justify-content-end">
