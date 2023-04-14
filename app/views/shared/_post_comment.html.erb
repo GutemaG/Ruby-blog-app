@@ -1,5 +1,12 @@
 <div class="">
-  <h4> <%= link_to post.title, user_post_path(user,post) %> </h4>
+  <div class="d-flex justify-content-between">
+    <h4> <%= link_to post.title, user_post_path(user,post) %> </h4>
+    <% if can? :destroy, post%>
+      <%=link_to "Delete", user_post_path(user, post),
+        data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+        class: 'btn btn-danger btn-sm' %>
+    <%end%>
+  </div>
   <p> <%= post.text %> </p>
   <div class="d-flex justify-content-end">
     <span class="">Comments: <%= post.comments.count%> </span>, 

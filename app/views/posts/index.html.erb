@@ -9,13 +9,20 @@
   </div>
   <% @posts.each do |post| %>
     <div class="m-1 border border-dark rounded border-2 p-2">
-      <h4> <%= link_to post.title, user_post_path(post, user_id: @user.id) %> </h4>
+      <div class="d-flex justify-content-between">
+        <h4> <%= link_to post.title, user_post_path(post, user_id: @user.id) %> </h4>
+        <% if can? :destroy, post%>
+          <%=link_to "Delete", user_post_path(@user, post),
+            data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+            class: 'btn btn-danger btn-sm' %>
+        <%end%>
+      </div>
       <p> <%= post.text %> </p>
       <div class="d-flex justify-content-end">
         <span class="m-2">Comments: <%= post.comments.count%> </span>
         <span class="m-2">Likes: <%= post.likes.count%> </span>
         <%= form_with model: Like.new, url: user_post_likes_path(@user, post) do |form| %>
-          <% form.submit :Like, class: "btn btn-danger btn-sm"%>
+          <% form.submit :Like, class: "btn btn-primary btn-sm"%>
         <% end %>
       </div>
       <div class="border mt-1 p-2">

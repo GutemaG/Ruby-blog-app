@@ -15,10 +15,18 @@
     <h5>Comments</h5>
     <div class="border mt-1 p-2">
       <% @post.comments.each do |comment| %>
-        <p>
-          <span> <%= comment.author.name %> : </span>
-          <span> <%= comment.text %> </span>
-        </p>
+        <div class="d-flex justify-content-between m-2">
+          <p>
+            <span class="fw-bold mr-2"> <%= comment.author.name %> : </span>
+            <span class="fw-italic"> <%= comment.text %> </span>
+          </p>
+          <% if can? :destroy, comment%>
+            <%=link_to "Delete", user_post_comment_path(@user, @post, comment),
+            data: { turbo_method: :delete, turbo_confirm: "Are You Sure?"  },
+            class: 'btn btn-danger btn-sm' %>
+          <%end%>
+        </div>
+        <hr>
       <%end%>
     </div>
   </div>
